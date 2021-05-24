@@ -1,0 +1,29 @@
+{
+  "name": "microbot",
+  "version": "0.0.1",
+  "description": "Pushing messages from bot to github repo as files",
+  "scripts": {
+    "start": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fogrew/microbot.git"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Andrew Gurylev",
+    "email": "andrew@gurylev.com",
+    "url": "https://gurylev.com/"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fogrew/microbot/issues"
+  },
+  "homepage": "https://github.com/fogrew/microbot#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "luxon": "^1.27.0",
+    "simple-git": "^2.39.0",
+    "telegraf": "^4.3.0"
+  }
+}
