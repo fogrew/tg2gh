@@ -16,7 +16,7 @@ module.exports = async function (text) {
     await git.pull()
     await git.add(FILE_NAME)
     await git.commit(COMMIT_MESSAGE)
-    await git.push('origin', 'main')
+    await git.push('origin', GIT_BRANCH_NAME)
   } catch (error) {
     console.error(`Error while pushing`, error);
   }
