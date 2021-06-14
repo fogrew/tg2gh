@@ -1,8 +1,8 @@
-# Microbot
+# tg2gh
+
+Telegram bot for sending messages to git repositories as files.
 
 **IN DEVELOPMENT NOW! Use at your own risk!**
-
-Pushing messages from bot to Github repo as files.
 
 ## Getting started
 
