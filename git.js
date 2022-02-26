@@ -15,6 +15,8 @@ module.exports = async function (text) {
   const FILE_NAME = sanitize(`${DATE_MASK}${FILE_EXTENSION}`)
   const FILE_PATH = path.normalize(`${BLOG_PATH}${path.sep}${FILE_NAME}`)
 
+  await fs.stat(BLOG_PATH)
+
   const git = simpleGit(BLOG_PATH)
   await fs.writeFile(FILE_PATH, text, 'utf8')
 
