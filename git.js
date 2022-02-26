@@ -18,12 +18,8 @@ module.exports = async function (text) {
   const git = simpleGit(BLOG_PATH)
   await fs.writeFile(FILE_PATH, text, 'utf8')
 
-  try {
-    await git.pull()
-    await git.add(FILE_NAME)
-    await git.commit(COMMIT_MESSAGE)
-    await git.push('origin', GIT_BRANCH_NAME)
-  } catch (error) {
-    console.error(`Error while pushing`, error);
-  }
+  await git.pull()
+  await git.add(FILE_NAME)
+  await git.commit(COMMIT_MESSAGE)
+  await git.push('origin', GIT_BRANCH_NAME)
 }

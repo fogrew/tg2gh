@@ -9,8 +9,12 @@ bot.start(({ reply }) => reply('Welcome! Write /help to recieve instructions.'))
 bot.help(({ reply }) => reply('Write me a message and I will push it to your git repo as markdown file'))
 
 bot.on('text', async (ctx) => {
-  await git(ctx.message.text)
-  ctx.reply(`Sent: ${ctx.message.text}`)
+  try {
+    await git(ctx.message.text)
+    ctx.reply(`Sent: ${ctx.message.text}`)
+  } catch(error) {
+    ctx.reply(`${error}`)
+  }
 })
 
 bot.launch()
