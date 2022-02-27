@@ -9,7 +9,8 @@ module.exports = async function (text) {
     BLOG_PATH,
     COMMIT_MESSAGE,
     FILE_EXTENSION,
-    GIT_BRANCH_NAME
+    GIT_BRANCH_NAME,
+    GIT_REMOTE,
   } = process.env
   const DATE_MASK = DateTime.now().toString()
   const FILE_NAME = sanitize(`${DATE_MASK}${FILE_EXTENSION}`)
@@ -23,5 +24,5 @@ module.exports = async function (text) {
   await git.pull()
   await git.add(FILE_NAME)
   await git.commit(COMMIT_MESSAGE)
-  await git.push('origin', GIT_BRANCH_NAME)
+  await git.push(GIT_REMOTE, GIT_BRANCH_NAME)
 }
